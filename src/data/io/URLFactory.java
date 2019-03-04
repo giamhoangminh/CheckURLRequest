@@ -14,7 +14,7 @@ import data.model.URLModel;
 
 public class URLFactory {
 	//ghi tiếp dữ liệu ra file
-	public static boolean writeOutPut2(ArrayList<URLModel> arr, String path)
+	public static void writeOutPut2(URLModel url, String path)
 	{
 		try
 		{
@@ -27,21 +27,16 @@ public class URLFactory {
 			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			//ghi dữ liệu
-			for(URLModel url : arr)
-			{
 				bw.write(url.toString());
 				bw.newLine();
-			}
 			
 			bw.close();
 			fw.close();
-			return true;
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
 		}
-		return false;
 	}
 	// ghi dữ liệu ra file
 	public static boolean writeOutPut(ArrayList<URLModel> arr, String path)
